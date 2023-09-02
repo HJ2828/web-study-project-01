@@ -1,0 +1,130 @@
+body {
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+.hidden {
+    display: none;
+}
+
+/* 배경화면 */
+#bgImage {
+    position: absolute;
+    width: 100%;
+    height:100%;
+    object-fit: cover;   /* 가로세로 비율 유지한 채로 사이즈 조절. 비율 맞지 않으면 이미지 확대하여 컨테이너 채움 https://nykim.work/86 */
+    left: 0px;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    z-index: -1;    /*-1: 텍스트가 위로, 1: 텍스트가 아래로*/ 
+    pointer-events: none;
+}
+
+/* 네비게이션바 */
+#navigation {
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    /* height: 50px; */
+    background-color: rgba(255, 255, 255, 1);
+    padding: 5px 0;
+}
+
+/* 네비게이션 안 기능 버튼 */
+#naviButtons {
+    display: inline-flex;
+    margin-right: 10px;
+}
+
+/* 배경 관련 기능 버튼 */
+#backImgButtons {
+    float: right;
+    background-color: rgba(214, 214, 214, 0.651);
+    padding: 10px;
+    margin: 5px 10px 0 0;
+}
+
+.btnHidden {
+    display: none;
+}
+
+#backImgButtons button{
+    background-color: rgb(180, 180, 180);
+}
+
+
+/* 이름 입력 */
+#before {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+#login-form input:first-child {
+    width: 500px;
+    height: 50px;
+    text-align: center;
+    font-size: x-large;
+    color: white;
+    /* background-color: rgba(255, 255, 255, 0.3);
+    border: 5px solid white;
+    border-radius: 20px 0 0 20px;
+    border-radius: 20px; */
+    background-color: rgba(180, 180, 180, 0.2);
+    border-radius: 10px 10px 2px 2px;
+    border: none;
+    border-bottom: 5px solid white;
+}
+#login-form input:first-child::placeholder {
+    color: white;
+    text-align: center;
+    font-size: x-large;
+}
+#login-form input:first-child:focus {
+    outline: none;
+}
+#login-form input:last-child {
+    width: 100px;
+    height: 55px;
+    text-align: center;
+    font-size: x-large;
+    font-weight: bold;
+    color: white;
+    background-color: rgba(255, 255, 255, 0.3);
+    border: 5px solid white;
+    /* border-radius: 0 20px 20px 0; */
+    border-radius: 20px;
+}
+#login-form input:last-child:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+}
+
+/* 이름 */
+#greeting {
+    font-size: x-large;
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+/* 메모장 */
+.moveItem {
+    /* position: absolute; */
+    width: 100px;
+    height: 100px;
+    background-color: antiquewhite;
+    /* pointer-events: none; */
+    padding: 100px;
+    z-index: 5;
+}
+.moveItem:hover {
+    cursor: pointer;
+}
+.moveItem:active {
+    cursor: pointer;
+}
+
+/* 날짜, 시간, 날씨 */

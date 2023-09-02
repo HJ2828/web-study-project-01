@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- 304로 인해 api가 화면에 나오지 않을 때 캐시를 지움-->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+
+    <link rel="stylesheet" href="styles.css"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+
+</head>
+<body>
+    <!-- <div id="" class="moveItem" draggable="true"></div> -->
+    <div id="before">
+        <form id="login-form" class="hidden">
+            <input type="text" maxlength="15" placeholder="Write your name" required />
+            <input type="submit" value="OK"/>
+        </form>
+    </div>
+
+    <div id="after" class="hidden">
+
+        <div id="navigation">
+            <div id="greeting">
+                <span id="dayPart"></span>
+                <span id="userName"></span>
+            </div>
+            <div id="naviButtons">
+                <div id="funcitonButtons">
+                    <button><span class="material-symbols-outlined">date_range</span></button>
+                    <button><span class="material-symbols-outlined">timer</span></button>
+                    <button><span class="material-symbols-outlined">fact_check</span></button>
+                    <button><span class="material-symbols-outlined">imagesmode</span></button>
+                    <button><span class="material-symbols-outlined">logout</span></button>
+                </div>
+            </div>
+        </div>
+
+        <div id="backImgButtons" class="btnHidden">
+            <button>좌</button>
+            <button>우</button>
+            <button>핀</button>
+            <div>
+                <form id="bgImageSrc">
+                    <input type="text" placeholder="이미지 주소를 입력하세요" required/>
+                    <input type="submit" value="OK"/>
+                </form>
+            </div>
+        </div>
+    
+        <div id="DayInfo">
+            <h3 id="date">2023/00/00/MON</h3>
+            <h1 id="time">00:00:00</h1>
+            <div id="weather">
+                <img src=""/>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    
+        <div id="stopwatch">
+            <h3>0:00:00</h3>
+            <button>START</button>
+            <button>RESET</button>
+        </div>
+    
+
+    </div>
+    
+
+
+
+    <script src="js/apikey.js"></script>
+    <script src="js/background.js"></script>
+    <script src="js/navigation.js"></script>
+    <script src="js/move.js"></script>
+    <script src="js/dayInfo.js"></script>
+    <script src="js/greeting.js"></script>
+    <script src="js/weather.js"></script>
+    <script src="js/stopwatch.js"></script>
+</body>
+</html>
+
+<!--만들것: 이름 입력, 이름띄우기, 날짜, 시간, 
+    날씨, -> 아이콘, 지역, 온도
+    스톱워치,
+    메모 or 투두, -> 움직이기
+    배경화면 변경 버튼, 
+    이미지 주소 가져오면 배경 변경가능,
+    이미지 로컬 저장해서 새고 해도 그 변경한 이미지 보이게(이미지 핀 버튼(배경 고정, 새고 해도 고정))
+    사운드?,
+    로그아웃
+-->
