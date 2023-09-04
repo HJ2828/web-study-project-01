@@ -10,8 +10,9 @@
     <meta http-equiv="Expires" content="0">
 
     <link rel="stylesheet" href="styles.css"/>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
-
+    <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" /> -->
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,100,1,200" rel="stylesheet" /> -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet" />
 </head>
 <body>
     <!-- <div id="" class="moveItem" draggable="true"></div> -->
@@ -31,19 +32,19 @@
             </div>
             <div id="naviButtons">
                 <div id="funcitonButtons">
-                    <button><span class="material-symbols-outlined">date_range</span></button>
-                    <button><span class="material-symbols-outlined">timer</span></button>
-                    <button><span class="material-symbols-outlined">fact_check</span></button>
-                    <button><span class="material-symbols-outlined">imagesmode</span></button>
-                    <button><span class="material-symbols-outlined">logout</span></button>
+                    <button class="material-symbols-outlined">date_range</button>
+                    <button class="material-symbols-outlined">timer</button>
+                    <button class="material-symbols-outlined">fact_check</button>
+                    <button class="material-symbols-outlined">imagesmode</button>
+                    <button class="material-symbols-outlined">logout</button>
                 </div>
             </div>
         </div>
 
-        <div id="backImgButtons" class="btnHidden">
-            <button>좌</button>
-            <button>우</button>
-            <button>핀</button>
+        <div id="backImgButtons" class="functionHidden">
+            <button class="material-symbols-outlined">arrow_back_ios</button>
+            <button class="material-symbols-outlined">arrow_forward_ios</button>
+            <button class="material-symbols-outlined">push_pin</button>
             <div>
                 <form id="bgImageSrc">
                     <input type="text" placeholder="이미지 주소를 입력하세요" required/>
@@ -52,7 +53,7 @@
             </div>
         </div>
     
-        <div id="DayInfo">
+        <div id="dayInfo" class="functionHidden">
             <h3 id="date">2023/00/00/MON</h3>
             <h1 id="time">00:00:00</h1>
             <div id="weather">
@@ -61,8 +62,8 @@
                 <span></span>
             </div>
         </div>
-    
-        <div id="stopwatch">
+     
+        <div id="stopwatch" class="functionHidden">
             <h3>0:00:00</h3>
             <button>START</button>
             <button>RESET</button>

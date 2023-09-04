@@ -38,6 +38,21 @@ body {
     display: inline-flex;
     margin-right: 10px;
 }
+#funcitonButtons button {
+    width: 40px;
+    height: 40px;
+    background-color: rgb(238, 238, 238);
+    border-radius: 50%;
+    border: 2px solid black;
+}
+#funcitonButtons button:hover {
+    cursor: pointer;
+    background-color: rgb(192, 192, 192);
+}
+
+.functionHidden {
+    display: none;
+}
 
 /* 배경 관련 기능 버튼 */
 #backImgButtons {
@@ -47,14 +62,9 @@ body {
     margin: 5px 10px 0 0;
 }
 
-.btnHidden {
-    display: none;
-}
-
 #backImgButtons button{
     background-color: rgb(180, 180, 180);
 }
-
 
 /* 이름 입력 */
 #before {

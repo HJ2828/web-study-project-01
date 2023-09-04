@@ -27,7 +27,8 @@ if(pinImage === null) {    // 로컬 저장소에 배경이 저장되어 있지 
     const parsedPin = JSON.parse(pinImage);
     backgroundImg.src = parsedPin.src;          // img의 src
     pinCheck = parsedPin.pin;   // 핀 활성화/비활성화
-    btnBackImgPin.innerText = "고정";
+    // btnBackImgPin.innerText = "고정";
+    btnBackImgPin.style.fontVariationSettings = "'FILL' 1"; // 핀 아이콘 fill 채우기
 }
 document.body.appendChild(backgroundImg);               // img를 html body에 넣기
 
@@ -73,14 +74,16 @@ function onImgPin() {   // 배경 이미지 고정
         localStorage.setItem(BACKGROUNDIMG_KEY, JSON.stringify(backgroundNow));   // 로컬 저장소에 핀 고정 배경 이미지 저장
         console.log(backgroundNow);
         console.log(typeof backgroundNow);
-        btnBackImgPin.innerText = "핀o";
+        // btnBackImgPin.innerText = "핀o";
+        btnBackImgPin.style.fontVariationSettings = "'FILL' 1"; // 핀 아이콘 fill 채우기
     }
 }
 
 function cancelPin() {
     pinCheck = false;    // 이미지 고정 취소
     localStorage.removeItem(BACKGROUNDIMG_KEY);     // 로컬 저장소에서 핀 삭제
-    btnBackImgPin.innerText = "핀x";
+    // btnBackImgPin.innerText = "핀x";
+    btnBackImgPin.style.fontVariationSettings = "'FILL' 0"; // 핀 아이콘 fill 채우기 x
 }
 
 bgImageSrcForm.addEventListener("submit", onImgSrcSubmit);  // 이미지 주소 입력
