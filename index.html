@@ -10,8 +10,6 @@
     <meta http-equiv="Expires" content="0">
 
     <link rel="stylesheet" href="styles.css"/>
-    <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" /> -->
-    <!-- <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,100,1,200" rel="stylesheet" /> -->
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet" />
 </head>
 <body>
@@ -42,9 +40,17 @@
         </div>
 
         <div id="backImgButtons" class="functionHidden">
-            <button class="material-symbols-outlined">arrow_back_ios</button>
-            <button class="material-symbols-outlined">arrow_forward_ios</button>
-            <button class="material-symbols-outlined">push_pin</button>
+            <div id="imgbtns">
+                <button class="material-symbols-outlined">arrow_back_ios</button>
+                <button class="material-symbols-outlined">arrow_forward_ios</button>
+                <button class="material-symbols-outlined">push_pin</button>
+                <div id="fileButton">
+                    <label for="chooseFile">
+                        <div class="material-symbols-outlined po">upload_file</div>
+                    </label>
+                </div>
+                <input id="chooseFile" type="file" accept="image/*"/>
+            </div>
             <div>
                 <form id="bgImageSrc">
                     <input type="text" placeholder="이미지 주소를 입력하세요" required/>
@@ -76,17 +82,10 @@
                 <button>Add</button>
             </div>
             <ul id="todoList">
-                <!-- <li class="checked">Task 1</li>
-                <li>Task 2</li>
-                <li>Task 3</li> -->
             </ul>
         </div>
-
     </div>
     
-
-
-
     <script src="js/apikey.js"></script>
     <script src="js/background.js"></script>
     <script src="js/navigation.js"></script>
@@ -98,14 +97,3 @@
     <script src="js/todo.js"></script>
 </body>
 </html>
-
-<!--만들것: 이름 입력, 이름띄우기, 날짜, 시간, 
-    날씨, -> 아이콘, 지역, 온도
-    스톱워치,
-    메모 or 투두, -> 움직이기
-    배경화면 변경 버튼, 
-    이미지 주소 가져오면 배경 변경가능,
-    이미지 로컬 저장해서 새고 해도 그 변경한 이미지 보이게(이미지 핀 버튼(배경 고정, 새고 해도 고정))
-    사운드?,
-    로그아웃
--->

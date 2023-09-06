@@ -18,9 +18,7 @@ function startTime() {
             stopWatchMinutes = 0;
         }
     }
-
-    stopWatch.innerText = `${stopWatchHour}:${String(stopWatchMinutes).padStart(2, "0")}:${String(stopWatchSeconds).padStart(2, "0")}`    
-
+    stopWatch.innerText = `${stopWatchHour}:${String(stopWatchMinutes).padStart(2, "0")}:${String(stopWatchSeconds).padStart(2, "0")}`;    
 }
 
 function onStart() {

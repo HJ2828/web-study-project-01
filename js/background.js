@@ -1,4 +1,3 @@
-//const images = [...Array(4)].map((item, index) => `${index}.gif`);  // map(): map에서 리턴된 값으로 배열 채울 수 있음 https://hjcode.tistory.com/73
 const bgImageSrcForm = document.querySelector("#bgImageSrc");
 const bgImageSrcInput = document.querySelector("#bgImageSrc input");
 const bgImageSrcInput1 = document.querySelector("#bgImageSrc input:first-child");
@@ -6,6 +5,8 @@ const bgImageSrcInput1 = document.querySelector("#bgImageSrc input:first-child")
 const btnBackImgPrev = document.querySelector("#backImgButtons button:nth-child(1)");
 const btnBackImgNext = document.querySelector("#backImgButtons button:nth-child(2)");
 const btnBackImgPin = document.querySelector("#backImgButtons button:nth-child(3)");
+
+const imgFile = document.querySelector("#chooseFile");
 
 const images = ["0.gif", "1.gif", "2.gif", "3.gif"];    // 배경 이미지 배열
 const BACKGROUNDIMG_KEY = "backgroundImg";
@@ -27,7 +28,6 @@ if(pinImage === null) {    // 로컬 저장소에 배경이 저장되어 있지 
     const parsedPin = JSON.parse(pinImage);
     backgroundImg.src = parsedPin.src;          // img의 src
     pinCheck = parsedPin.pin;   // 핀 활성화/비활성화
-    // btnBackImgPin.innerText = "고정";
     btnBackImgPin.style.fontVariationSettings = "'FILL' 1"; // 핀 아이콘 fill 채우기
 }
 document.body.appendChild(backgroundImg);               // img를 html body에 넣기
@@ -74,16 +74,21 @@ function onImgPin() {   // 배경 이미지 고정
         localStorage.setItem(BACKGROUNDIMG_KEY, JSON.stringify(backgroundNow));   // 로컬 저장소에 핀 고정 배경 이미지 저장
         console.log(backgroundNow);
         console.log(typeof backgroundNow);
-        // btnBackImgPin.innerText = "핀o";
         btnBackImgPin.style.fontVariationSettings = "'FILL' 1"; // 핀 아이콘 fill 채우기
     }
 }
 
-function cancelPin() {
-    pinCheck = false;    // 이미지 고정 취소
+function cancelPin() {    // 이미지 고정 취소
+    pinCheck = false;
     localStorage.removeItem(BACKGROUNDIMG_KEY);     // 로컬 저장소에서 핀 삭제
-    // btnBackImgPin.innerText = "핀x";
     btnBackImgPin.style.fontVariationSettings = "'FILL' 0"; // 핀 아이콘 fill 채우기 x
+}
+
+function onImgFile(event) {  // 이미지 파일
+    const file = event.target.files[0];
+    const imgUrl = URL.createObjectURL(file);
+    backgroundImg.src = imgUrl;          // img의 src
+    cancelPin();
 }
 
 bgImageSrcForm.addEventListener("submit", onImgSrcSubmit);  // 이미지 주소 입력
@@ -91,3 +96,5 @@ bgImageSrcForm.addEventListener("submit", onImgSrcSubmit);  // 이미지 주소 
 btnBackImgPrev.addEventListener("click", onImgPrev);  // 이전 배경 이미지
 btnBackImgNext.addEventListener("click", onImgNext);  // 다음 배경 이미지
 btnBackImgPin.addEventListener("click", onImgPin);   // 배경 이미지 고정
+
+chooseFile.addEventListener("change", onImgFile);  // 이미지 파일
