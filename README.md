@@ -1,4 +1,5 @@
 # Web_studyProject01
+- 개인 프로젝트
 - html, css, js를 이용한 웹 제작
 - https://hj2828.github.io/Web_studyProject01/
 
