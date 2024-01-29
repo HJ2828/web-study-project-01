@@ -1,7 +1,7 @@
 # Web_studyProject01
 - 개인 프로젝트
 - html, css, js를 이용한 웹 제작
-- https://hj2828.github.io/Web_studyProject01/
+- https://hj2828.github.io/web-study-project-01/
 
 ## 제작 기간
 - 2023.08.24 ~ 2023.09.07
